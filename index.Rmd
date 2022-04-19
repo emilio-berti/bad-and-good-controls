@@ -1,0 +1,22 @@
+---
+title: "Good and bad controls"
+author: "Emilio Berti"
+date: "April 2022"
+output: github_document
+---
+
+# What are good and bad controls?
+
+Good controls are variable that, when included into a statistical model, help finding the true association among other variables. These are also called _deconfounders_.
+Bad controls are variable that, when included into a statistical model, introduce bias in the true association among other variables. These are also called _confounders_.
+Good and bad controls can be identified visually using causal diagrams, also called directed acyclic graphs (DAGs).
+
+# DAGs
+
+DAGs represent the scientific model of the phenomenon of interest. They are composed of nodes (e.g., $\{X, Z, W, ..., Y\}$) and edges (e.g., $\{ X \rightarrow Z, Z \rightarrow W, ..., W \rightarrow Y \}$), where the arrow $\{ X \rightarrow Z\}$ denotes a (possible) direct causal relationship.
+
+DAGs have three main motifs:
+
+  - Mediators or **chains**: $\{ X \rightarrow Z \rightarrow Y \}$.
+  - Common causes or **forks**: $\{ X \leftarrow Z \rightarrow Y \}$.
+  - Common effects or **colliders**: $\{ X \rightarrow Z \leftarrow Y \}$.
